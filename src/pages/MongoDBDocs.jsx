@@ -182,7 +182,7 @@ function MongoDBDocs() {
 PORT=5001
 
 # MongoDB Atlas connection string
-MONGODB_URI=mongodb+srv://username:password@cluster0.xxxxx.mongodb.net/events_calendar?retryWrites=true&w=majority
+MONGODB_URI=Enlace de mongo DB ATLAS con usuario y contraseña
 
 # Entorno de desarrollo
 NODE_ENV=development`}

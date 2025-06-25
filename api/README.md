@@ -39,7 +39,7 @@ Una API RESTful completa para gestionar eventos y calendarios, construida con No
    Edita el archivo `.env` con tus datos:
    ```env
    PORT=5000
-   MONGODB_URI=mongodb+srv://username:password@cluster.mongodb.net/events_calendar
+   MONGODB_URI=
    NODE_ENV=development
    ```
 
