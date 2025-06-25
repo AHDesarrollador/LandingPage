@@ -16,7 +16,7 @@ function JSStackedCards() {
   const cards = [
     {
       id: 1,
-      title: "Ariel Hernandez",
+      title: "Tu nombre aquí",
       subtitle: "Desarrollador FullStack",
       description: "Especializado en crear experiencias web interactivas y modernas con las últimas tecnologías.",
       icon: "👨‍💻",

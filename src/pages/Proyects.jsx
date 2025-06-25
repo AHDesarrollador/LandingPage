@@ -66,7 +66,7 @@ function Proyectos() {
       image: "https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=800&h=600&fit=crop",
       category: "frontend",
       technologies: ["React", "Vite", "Lenis", "GSAP", "CSS"],
-      githubUrl: "https://github.com/Ariel144/Landing-Minercraft",
+      githubUrl: "https://github.com/",
       liveUrl: "https://landing-demo.com",
       featured: false
     },
@@ -99,7 +99,7 @@ function Proyectos() {
       image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop",
       category: "frontend",
       technologies: ["React", "Vite", "GSAP", "Framer Motion", "Lenis", "CSS","JavaScript" ],
-      githubUrl: "https://github.com/Ariel144/LandingPage",
+      githubUrl: "https://github.com/",
       liveUrl: "https://mi-portfolio.com",
       featured: true
     }

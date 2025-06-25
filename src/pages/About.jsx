@@ -299,7 +299,7 @@ const AboutSection = () => {
                 </div>
                 <div className="code-line code-indent">
                   <span className="code-property">name:</span>
-                  <span className="code-string"> "Ariel Hernandez"</span>
+                  <span className="code-string"> "Tu nombre"</span>
                   <span className="code-comma">,</span>
                 </div>
                 <div className="code-line code-indent">

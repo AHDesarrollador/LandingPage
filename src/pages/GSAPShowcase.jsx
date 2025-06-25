@@ -329,7 +329,7 @@ const GSAPShowcase = () => {
 
       {/* Author Section */}
       <section className="showcase-section author-section">
-        <div ref={authorRef} className="author-text">Por Ariel Hernández</div>
+        <div ref={authorRef} className="author-text">Por Tu nombre</div>
         <p className="showcase-description">
           Todos estos efectos fueron creados utilizando la poderosa librería GSAP (GreenSock Animation Platform).
           GSAP permite crear animaciones fluidas, performantes y complejas para la web.

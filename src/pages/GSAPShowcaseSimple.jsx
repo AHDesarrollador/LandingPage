@@ -406,7 +406,7 @@ const GSAPShowcaseSimple = () => {
             marginBottom: '2rem'
           }}
         >
-          Por Ariel Hernández
+          Por [Tu nombre Aqui]
         </div>
         
         <p style={{
