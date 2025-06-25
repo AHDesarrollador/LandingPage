@@ -2,6 +2,7 @@
 import { Link, useNavigate, useLocation } from "react-router-dom";
 import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
+import TypingEffect from "./TypingEffect";
 import '../styles/Navbar.css'; 
 
 function Navbar() {
@@ -103,7 +104,7 @@ function Navbar() {
           block: 'start'
         });
       }
-    }, 100);
+    }, 200); // Aumentado el delay para dar tiempo a que la página cargue
   };
 
   return (
@@ -148,8 +149,14 @@ function Navbar() {
       <section ref={heroRef} className="hero-section">
         <div className="hero-content">
           <h1 ref={titleRef} className="hero-title">
-            Desarrollador
-            <span className="gradient-text"> Full Stack</span>
+            <div className="title-container">
+              <TypingEffect 
+                words={['Desarrollador', 'Creador', 'Innovador', 'Problem Solver']}
+                speed={100}
+                delay={1500}
+              />
+              <span className="gradient-text">Full Stack</span>
+            </div>
           </h1>
           <p ref={subtitleRef} className="hero-subtitle">
             Creando experiencias digitales excepcionales con tecnologías modernas.

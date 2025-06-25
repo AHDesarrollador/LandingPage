@@ -1,5 +1,6 @@
 // src/components/Contact.jsx
 import { useEffect, useRef, useState } from "react";
+import { useLocation } from "react-router-dom";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import '../styles/Contact.css'; // Asegúrate de tener este archivo con los estilos necesarios
@@ -11,6 +12,7 @@ function Contact() {
   const formRef = useRef(null);
   const infoRef = useRef(null);
   const socialRef = useRef(null);
+  const location = useLocation();
   
   const [formData, setFormData] = useState({
     name: '',
@@ -23,6 +25,19 @@ function Contact() {
   const [submitStatus, setSubmitStatus] = useState('');
 
   useEffect(() => {
+    // Manejar scroll automático cuando se navega desde otra página
+    if (location.state?.scrollToSection === 'contacto-section') {
+      setTimeout(() => {
+        const element = document.getElementById('contacto-section');
+        if (element) {
+          element.scrollIntoView({ 
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
+      }, 100);
+    }
+
     // Animación inicial del hero
     gsap.fromTo(heroRef.current,
       { y: 50, opacity: 0 },
@@ -160,7 +175,7 @@ function Contact() {
     <div className="contact-container">
       
       {/* Hero Section */}
-      <section ref={heroRef} className="contact-hero">
+      <section id="contacto-section" ref={heroRef} className="contact-hero">
         <div className="container">
           <div className="hero-content">
             <h1 className="hero-title">

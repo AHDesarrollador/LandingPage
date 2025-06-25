@@ -1,0 +1,318 @@
+/* GSAP Showcase Styles */
+.gsap-showcase {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #0c0c0c 0%, #1a1a2e 50%, #16213e 100%);
+  color: #ffffff;
+  overflow-x: hidden;
+  position: relative;
+  opacity: 0;
+}
+
+.back-button {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  background: rgba(136, 206, 2, 0.9);
+  color: white;
+  padding: 12px 24px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 600;
+  z-index: 1000;
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+}
+
+.back-button:hover {
+  background: rgba(136, 206, 2, 1);
+  transform: translateX(-5px);
+  box-shadow: 0 5px 20px rgba(136, 206, 2, 0.4);
+}
+
+.showcase-section {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 80px 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Parallax backgrounds */
+.parallax-bg {
+  position: absolute;
+  width: 120%;
+  height: 120%;
+  top: -10%;
+  left: -10%;
+  pointer-events: none;
+}
+
+.bg-1 {
+  background: radial-gradient(circle at 30% 40%, rgba(136, 206, 2, 0.1) 0%, transparent 50%),
+              radial-gradient(circle at 80% 80%, rgba(79, 70, 229, 0.1) 0%, transparent 50%),
+              radial-gradient(circle at 40% 80%, rgba(236, 72, 153, 0.1) 0%, transparent 50%);
+}
+
+/* Hero Section */
+.hero-showcase {
+  background: linear-gradient(45deg, #000000, #1a1a2e);
+  text-align: center;
+}
+
+.hero-text {
+  font-size: clamp(2rem, 8vw, 6rem);
+  font-weight: 800;
+  background: linear-gradient(45deg, #88CE02, #4f46e5, #ec4899);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.gsap-logo {
+  margin-top: 40px;
+}
+
+.gsap-logo-text {
+  font-size: 4rem;
+  font-weight: 900;
+  color: #88CE02;
+  text-shadow: 0 0 30px rgba(136, 206, 2, 0.8);
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+}
+
+/* Morphing Shapes */
+.morphing-section {
+  background: linear-gradient(135deg, #1a1a2e, #16213e);
+}
+
+.morphing-section h2 {
+  font-size: 3rem;
+  margin-bottom: 60px;
+  color: #88CE02;
+}
+
+.morphing-container {
+  display: flex;
+  gap: 60px;
+  align-items: center;
+}
+
+.morph-svg {
+  width: 200px;
+  height: 200px;
+  filter: drop-shadow(0 0 20px rgba(136, 206, 2, 0.5));
+}
+
+/* Particles Section */
+.particles-section {
+  background: radial-gradient(circle at center, #16213e 0%, #0c0c0c 100%);
+  position: relative;
+}
+
+.particles-section h2 {
+  font-size: 3rem;
+  margin-bottom: 40px;
+  color: #4f46e5;
+}
+
+.particles-container {
+  width: 100%;
+  height: 400px;
+  position: relative;
+  border: 2px solid rgba(79, 70, 229, 0.3);
+  border-radius: 20px;
+  overflow: hidden;
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.showcase-particle {
+  border-radius: 50%;
+  filter: blur(0.5px);
+}
+
+/* Infinite Scrolling Text */
+.infinite-section {
+  background: #000;
+  overflow: hidden;
+  justify-content: center;
+}
+
+.infinite-wrapper {
+  width: 200%;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.infinite-text {
+  font-size: 8rem;
+  font-weight: 900;
+  color: transparent;
+  -webkit-text-stroke: 2px #88CE02;
+  text-stroke: 2px #88CE02;
+  white-space: nowrap;
+  filter: drop-shadow(0 0 20px rgba(136, 206, 2, 0.5));
+}
+
+/* Split Text */
+.split-text-section {
+  background: linear-gradient(45deg, #16213e, #1a1a2e);
+}
+
+.split-text {
+  font-size: clamp(2rem, 6vw, 4rem);
+  font-weight: 700;
+  text-align: center;
+  max-width: 800px;
+  line-height: 1.2;
+}
+
+.split-text .char {
+  display: inline-block;
+  color: #ffffff;
+  text-shadow: 0 0 20px rgba(136, 206, 2, 0.5);
+}
+
+/* Liquid Distortion */
+.liquid-section {
+  background: radial-gradient(ellipse at top, #1a1a2e, #000);
+}
+
+.liquid-section h2 {
+  font-size: 3rem;
+  margin-bottom: 60px;
+  color: #ec4899;
+}
+
+.liquid-container {
+  width: 400px;
+  height: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.liquid-svg {
+  width: 100%;
+  height: 100%;
+  filter: drop-shadow(0 0 30px rgba(236, 72, 153, 0.6));
+}
+
+/* Magnetic Elements */
+.magnetic-section {
+  background: linear-gradient(135deg, #0c0c0c, #16213e);
+}
+
+.magnetic-section h2 {
+  font-size: 3rem;
+  margin-bottom: 60px;
+  color: #4f46e5;
+}
+
+.magnetic-container {
+  display: flex;
+  gap: 40px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.magnetic {
+  background: linear-gradient(45deg, #88CE02, #4f46e5);
+  padding: 20px 40px;
+  border-radius: 50px;
+  font-weight: 700;
+  font-size: 1.2rem;
+  cursor: pointer;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+}
+
+.magnetic:hover {
+  box-shadow: 0 20px 40px rgba(136, 206, 2, 0.4);
+}
+
+/* Author Section */
+.author-section {
+  background: linear-gradient(45deg, #000, #1a1a2e);
+  text-align: center;
+}
+
+.author-text {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 800;
+  background: linear-gradient(45deg, #88CE02, #ec4899);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 40px;
+}
+
+.showcase-description {
+  max-width: 800px;
+  font-size: 1.2rem;
+  line-height: 1.8;
+  color: #b3b3b3;
+  text-align: center;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .showcase-section {
+    padding: 60px 15px;
+  }
+  
+  .morphing-container {
+    flex-direction: column;
+    gap: 30px;
+  }
+  
+  .magnetic-container {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .infinite-text {
+    font-size: 4rem;
+  }
+  
+  .particles-container {
+    height: 300px;
+  }
+  
+  .liquid-container {
+    width: 300px;
+    height: 300px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-text {
+    font-size: 2rem;
+  }
+  
+  .morphing-section h2,
+  .particles-section h2,
+  .liquid-section h2,
+  .magnetic-section h2 {
+    font-size: 2rem;
+  }
+  
+  .morph-svg {
+    width: 150px;
+    height: 150px;
+  }
+  
+  .infinite-text {
+    font-size: 3rem;
+  }
+}

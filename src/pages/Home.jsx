@@ -183,7 +183,7 @@ function Home() {
             {featuredProjects.map((project) => (
               <div 
                 key={project.id}
-                className="featured-card"
+                className="featured-card interactive"
                 onClick={() => handleProjectClick(project.id)}
               >
                 <div className="featured-image">
@@ -212,7 +212,7 @@ function Home() {
           <div ref={ctaRef} className="featured-cta">
             <button 
               onClick={handleViewAllClick}
-              className="btn-outline"
+              className="btn-outline interactive"
             >
               Ver todos los proyectos
             </button>
@@ -232,23 +232,79 @@ function Home() {
           <h2 className="section-title">Tecnologías</h2>
           <div className="skills-grid">
             {[
-              { name: "React", color: "#61DAFB", icon: "⚛️" },
-              { name: "JavaScript", color: "#F7DF1E", icon: "🟨" },
-              { name: "Node.js", color: "#339933", icon: "🟢" },
-              { name: "CSS3", color: "#1572B6", icon: "🎨" },
-              { name: "MongoDB", color: "#47A248", icon: "🍃" },
-              { name: "Git", color: "#F05032", icon: "📝" },
-              { name: "GSAP", color: "#88CE02", icon: "✨" },
-              { name: "Vite", color: "#646CFF", icon: "⚡" }
+              { name: "JavaScript", color: "#F7DF1E", icon: "🟨", level: 75 },
+              { name: "Node.js", color: "#339933", icon: "🟢", level: 80 },
+              { name: "CSS3", color: "#1572B6", icon: "🎨", level: 88 },
+              { name: "MongoDB", color: "#47A248", icon: "🍃", level: 80 },
+              { name: "GSAP", color: "#88CE02", icon: "✨", level: 80 },
+              { name: "Lenis", color: "#FF6B6B", icon: "🌊", level: 70 }
             ].map((skill, index) => (
               <div
                 key={skill.name}
                 ref={addToSkillRefs}
-                className="skill-item"
-                style={{ '--skill-color': skill.color }}
+                className="skill-item interactive"
+                style={{ 
+                  '--skill-color': skill.color,
+                  cursor: (skill.name === 'GSAP' || skill.name === 'JavaScript' || skill.name === 'CSS3' || skill.name === 'Lenis' || skill.name === 'Node.js' || skill.name === 'MongoDB') ? 'pointer' : 'default'
+                }}
+                onClick={() => {
+                  if (skill.name === 'GSAP') {
+                    navigate('/gsap-showcase');
+                  } else if (skill.name === 'JavaScript') {
+                    navigate('/js-stacked-cards', { state: { scrollToSection: 'javascript-section' } });
+                  } else if (skill.name === 'CSS3') {
+                    navigate('/css-documentation');
+                  } else if (skill.name === 'Lenis') {
+                    navigate('/lenis-showcase');
+                  } else if (skill.name === 'Node.js') {
+                    navigate('/nodejs-api');
+                  } else if (skill.name === 'MongoDB') {
+                    navigate('/mongodb-docs');
+                  }
+                }}
+                onMouseEnter={(e) => {
+                  gsap.to(e.currentTarget, {
+                    scale: 1.05,
+                    rotateY: 5,
+                    duration: 0.3,
+                    ease: "power2.out"
+                  });
+                }}
+                onMouseLeave={(e) => {
+                  gsap.to(e.currentTarget, {
+                    scale: 1,
+                    rotateY: 0,
+                    duration: 0.3,
+                    ease: "power2.out"
+                  });
+                }}
               >
                 <div className="skill-icon">{skill.icon}</div>
                 <h3>{skill.name}</h3>
+                <div className="skill-level">
+                  <div 
+                    className="skill-bar"
+                    style={{
+                      width: '100%',
+                      height: '4px',
+                      backgroundColor: 'rgba(255,255,255,0.1)',
+                      borderRadius: '2px',
+                      overflow: 'hidden'
+                    }}
+                  >
+                    <div 
+                      className="skill-progress"
+                      style={{
+                        width: `${skill.level}%`,
+                        height: '100%',
+                        background: skill.color,
+                        borderRadius: '2px',
+                        transition: 'width 1s ease-out'
+                      }}
+                    />
+                  </div>
+                  <span className="skill-percentage">{skill.level}%</span>
+                </div>
               </div>
             ))}
           </div>
@@ -265,10 +321,10 @@ function Home() {
               ¡Hablemos sobre tu próxima idea!
             </p>
             <div className="contact-buttons">
-              <Link to="/contacto" className="btn-primary">
+              <Link to="/contacto" className="btn-primary interactive">
                 Contactar ahora
               </Link>
-              <a href="mailto:tu@email.com" className="btn-secondary">
+              <a href="mailto:tu@email.com" className="btn-secondary interactive">
                 Enviar email
               </a>
             </div>

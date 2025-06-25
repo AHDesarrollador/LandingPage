@@ -267,6 +267,29 @@
   overflow: hidden;
 }
 
+/* Indicador visual para GSAP clickeable */
+.skill-item[style*="cursor: pointer"]::after {
+  content: "👆 ¡Haz clic!";
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: #88CE02;
+  color: white;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: bold;
+  animation: pulse 2s infinite;
+  z-index: 10;
+  box-shadow: 0 4px 15px rgba(136, 206, 2, 0.4);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+}
+
 .skill-item::before {
   content: '';
   position: absolute;
@@ -298,6 +321,19 @@
   color: #fff;
   font-size: 1.2rem;
   font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.skill-level {
+  margin-top: 1rem;
+}
+
+.skill-percentage {
+  display: block;
+  color: var(--skill-color);
+  font-weight: bold;
+  font-size: 0.9rem;
+  margin-top: 0.5rem;
 }
 
 /* ===== CONTACT CTA SECTION ===== */

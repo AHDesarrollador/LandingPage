@@ -17,11 +17,11 @@ function Proyectos() {
   const projects = [
     {
       id: 1,
-      title: "E-commerce Moderno",
+      title: "Control Escolar En Java",
       description: "Tienda online completa con React, Node.js, MongoDB y Stripe para pagos. Incluye panel de administración y gestión de inventario.",
       image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&h=600&fit=crop",
       category: "fullstack",
-      technologies: ["React", "Node.js", "MongoDB", "Stripe", "Tailwind CSS"],
+      technologies: ["Java", "MongoDB", "CSS"],
       githubUrl: "https://github.com/usuario/ecommerce",
       liveUrl: "https://ecommerce-demo.com",
       featured: true
@@ -61,12 +61,12 @@ function Proyectos() {
     },
     {
       id: 5,
-      title: "Landing Page Creativa",
+      title: "Landing Page Minecraft Sencilla ",
       description: "Sitio web moderno con animaciones avanzadas, diseño responsivo y optimización SEO. Carga ultra-rápida.",
       image: "https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=800&h=600&fit=crop",
       category: "frontend",
-      technologies: ["HTML5", "CSS3", "JavaScript", "GSAP", "Webpack"],
-      githubUrl: "https://github.com/usuario/landing",
+      technologies: ["React", "Vite", "Lenis", "GSAP", "CSS"],
+      githubUrl: "https://github.com/Ariel144/Landing-Minercraft",
       liveUrl: "https://landing-demo.com",
       featured: false
     },
@@ -95,11 +95,11 @@ function Proyectos() {
     {
       id: 8,
       title: "Portfolio Interactivo",
-      description: "Portfolio personal con animaciones 3D, transiciones suaves y diseño minimalista. Totalmente responsive.",
+      description: "Portfolio personal con animaciones, transiciones suaves y diseño minimalista. Totalmente responsive.",
       image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop",
       category: "frontend",
-      technologies: ["React", "Three.js", "GSAP", "Framer Motion", "Styled Components"],
-      githubUrl: "https://github.com/usuario/portfolio",
+      technologies: ["React", "Vite", "GSAP", "Framer Motion", "Lenis", "CSS","JavaScript" ],
+      githubUrl: "https://github.com/Ariel144/LandingPage",
       liveUrl: "https://mi-portfolio.com",
       featured: true
     }
@@ -224,7 +224,13 @@ function Proyectos() {
               <div 
                 key={project.id} 
                 className="proyecto-card"
-                onClick={() => openProjectModal(project)}
+                onClick={() => {
+                  if (project.id === 8 && project.technologies.includes('JavaScript')) {
+                    window.location.href = '/js-stacked-cards';
+                  } else {
+                    openProjectModal(project);
+                  }
+                }}
               >
                 <div className="proyecto-image">
                   <img src={project.image} alt={project.title} />
